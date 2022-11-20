@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="card-container">
     <div :id="windEffect()" >
     <div id="card">
         
@@ -103,6 +103,9 @@ computed: {
 
   
 <style>
+.card-container{
+  height: 420px;
+}
 #deleteButton{
 background-color: #888888;
 border-style: none;

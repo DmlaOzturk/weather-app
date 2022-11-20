@@ -154,4 +154,20 @@ body {
   outline: none !important;
   background-color: rgb(255, 255, 255);
 }
+
+@media only screen and (max-width: 400px) {
+  html,
+  body {
+  margin: 0;
+  padding: 0;
+  overflow:inherit;
+}
+  #card-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80vh;
+  flex-direction: column;
+}
+}
 </style>
