@@ -224,5 +224,14 @@ margin:2rem;
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
+  @media only screen and (max-width: 400px) {
+#card{
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+}
 
 </style>
