@@ -52,13 +52,11 @@ export default {
       const data = await response.json();
       this.cityData = data;
 
-        if(this.cityDataList.length<4){
+        if(this.cityDataList.length<5){
         this.cityDataList.unshift(this.cityData);
-        console.log(this.cityDataList);
       }
-      if (this.cityDataList.length==4){
-        this.cityDataList.splice(3,1);
-        this.cityDataList.unshift(this.cityData);
+      if (this.cityDataList.length >=5){
+        this.cityDataList.splice(4,1);
       }
       
       this.localCards = localStorage.setItem('cardInfo',JSON.stringify(this.cityDataList));
