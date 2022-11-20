@@ -155,7 +155,7 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 390px) {
   html,
   body {
   margin: 0;
