@@ -44,7 +44,9 @@
     methods:{
 
     genereteBackground(){
+      
       let iconId = this.cityData.weather?.[0]?.id;
+      console.log(iconId);
       if(iconId >= 500 && iconId<= 531)
         return "card-content weather_rain";
       else if (iconId >= 701 && iconId <= 781)

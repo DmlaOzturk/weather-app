@@ -46,6 +46,7 @@ export default {
 
   methods:{
     async getWeatherByName() {
+      if(this.getCityName !==""){
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${this.getCityName}&appid=0d6a6af851440ceceedf74e5105cbdc3`
       );
@@ -61,7 +62,7 @@ export default {
       
       this.localCards = localStorage.setItem('cardInfo',JSON.stringify(this.cityDataList));
       this.getCityName="";
-     
+    }
     },
     mounted(){
       if (localStorage.getItem('cardInfo')){
@@ -78,6 +79,13 @@ export default {
 </script>
 
 <style>
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+   overflow:hidden;
+}
 #weatherApp {
   display: flex;
   flex-direction: column;
@@ -86,32 +94,38 @@ export default {
   padding: 0;
   height: 100vh;
   width: 100%;
+ 
 }
 
 #header {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 10vh;
-  background-color: rgb(233, 238, 193);
+  background-color: rgb(211, 228, 231);
 }
 
 #header-content {
   display: flex;
   justify-content: space-around;
-  width: 20%;
+  width: 40%;
 }
 #header-content_input {
-  width: 15rem;
-  margin-right: 5px;
+  width: 25rem;
+  border-style: none;
+  height: 2rem;
+  margin-right: 10px;
   background-color: rgb(255, 255, 255);
 }
 
 #header-content_button {
-  width: 4rem;
+  width: 7rem;
   border-style: none;
   box-shadow: 3px 4px 6px #888888;
+  border-radius: 3rem;
   color: rgb(15, 18, 20);
   background-color: aliceblue;
 }
@@ -126,14 +140,18 @@ export default {
   justify-content: center;
   height: 80vh;
 }
-
-
 #footer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 10vh;
-  background-color: rgb(199, 227, 240);
+}
+#header-content_button:active{
+  color: rgb(96, 94, 232);
+}
+#header-content_input:focus{
+  outline: none !important;
+  background-color: rgb(255, 255, 255);
 }
 </style>
